@@ -1,10 +1,10 @@
 
 <style>
-        .area {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-        }
+    .area {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+    }
 
     .ivu-layout {
         width: 100%;

@@ -18,6 +18,21 @@
             <Col class="box" order="2" span="6">3</Col>
             <Col class="box" order="1" span="6">4</Col>
         </Row>
+        <Row>
+            <Button>Default</Button>
+            <Button loading type="primary">Primary</Button>
+            <Button type="ghost">Ghost</Button>
+            <Button type="dashed">Dashed</Button>
+            <Button type="text">Text</Button>
+            <br><br>
+            <Button type="info">Info</Button>
+            <Button type="success">Success</Button>
+            <Button type="warning">Warning</Button>
+            <Button type="error">Error</Button>
+        </Row>
+        <Row>
+            <Icon type="checkmark" />
+        </Row>
     </div>
 </template>
 

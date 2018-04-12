@@ -1,0 +1,13 @@
+{
+  "name": "iview-learn",
+  "version": "1.0.0",
+  "description": "iview学习项目",
+  "main": "./src/index.js",
+  "repository": "https://github.com/gstok/iview-learn",
+  "author": "gstok <3081716662@qq.com>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "iview": "^2.13.0"
+  }
+}

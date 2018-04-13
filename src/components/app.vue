@@ -94,13 +94,97 @@
         </Sider>
         <Layout>
             <Header class="my-header">Header</Header>
-            <Content>Content</Content>
+            <Content>
+                <Table ref="mytable" highlight-row @on-current-change="test" height="300" stripe border :columns="columns1" :data="data1"></Table>
+                <Button @click="handleClearCurrentRow">Clear</Button>
+            </Content>
             <Footer>Footer</Footer>
         </Layout>
     </Layout>
 </template>
 <script>
     export default {
-        name: "app"
+        name: "app",
+        data () {
+            return {
+                columns1: [
+                    {
+                        title: '名称',
+                        key: 'name'
+                    },
+                    {
+                        title: '年龄',
+                        key: 'age'
+                    },
+                    {
+                        title: '地址',
+                        key: 'address'
+                    },
+                    {
+                        title: '日期',
+                        key: 'date'
+                    }
+                ],
+                data1: [
+                    {
+                        name: '顾世豪',
+                        age: 25,
+                        address: '浙江省杭州市萧山区',
+                        date: '2018-01-04'
+                    },
+                    {
+                        name: '顾世豪',
+                        age: 25,
+                        address: '浙江省杭州市萧山区',
+                        date: '2018-01-04'
+                    },
+                    {
+                        name: '顾世豪',
+                        age: 25,
+                        address: '浙江省杭州市萧山区',
+                        date: '2018-01-04'
+                    },
+                    {
+                        name: '顾世豪',
+                        age: 25,
+                        address: '浙江省杭州市萧山区',
+                        date: '2018-01-04'
+                    },
+                    {
+                        name: 'John Brown',
+                        age: 18,
+                        address: 'New York No. 1 Lake Park',
+                        date: '2016-10-03'
+                    },
+                    {
+                        name: 'Jim Green',
+                        age: 24,
+                        address: 'London No. 1 Lake Park',
+                        date: '2016-10-01'
+                    },
+                    {
+                        name: 'Joe Black',
+                        age: 30,
+                        address: 'Sydney No. 1 Lake Park',
+                        date: '2016-10-02'
+                    },
+                    {
+                        name: 'Jon Snow',
+                        age: 26,
+                        address: 'Ottawa No. 2 Lake Park',
+                        date: '2016-10-04'
+                    }
+                ]
+            }
+        },
+        methods: {
+            test (curRow, oldRow) {
+                console.log(curRow);
+                console.log(oldRow);
+            },
+            handleClearCurrentRow () {
+                this.$refs.mytable.clearCurrentRow();
+            }
+        }
     }
 </script>

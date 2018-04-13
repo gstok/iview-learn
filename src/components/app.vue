@@ -1,30 +1,22 @@
-
-<style>
+<style scoped>
     .area {
         position: fixed;
         width: 100%;
         height: 100%;
     }
-
-    .ivu-layout {
-        width: 100%;
-        height: 100%;
-    }
 </style>
-
-
 <template>
-    <div class="area">
+    <Layout class="area">
+        <Sider hide-trigger>Sider</Sider>
         <Layout>
             <Header>Header</Header>
             <Content>Content</Content>
             <Footer>Footer</Footer>
         </Layout>
-    </div>
+    </Layout>
 </template>
-
 <script>
     export default {
-        name: 'app'
-    };
+        name: "app"
+    }
 </script>

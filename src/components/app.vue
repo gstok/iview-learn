@@ -95,8 +95,10 @@
         <Layout>
             <Header class="my-header">Header</Header>
             <Content>
-                <Table ref="mytable" highlight-row @on-current-change="test" height="300" stripe border :columns="columns1" :data="data1"></Table>
+                <Table @on-select="test2" ref="mytable" highlight-row @on-current-change="test" height="300" stripe border :columns="columns1" :data="data1"></Table>
                 <Button @click="handleClearCurrentRow">Clear</Button>
+                <Button @click="test3(true)">设置全选</Button>
+                <Button @click="test3(false)">取消权限</Button>
             </Content>
             <Footer>Footer</Footer>
         </Layout>
@@ -108,6 +110,11 @@
         data () {
             return {
                 columns1: [
+                    {
+                        type: 'selection',
+                        width: 60,
+                        align: 'center'
+                    },
                     {
                         title: '名称',
                         key: 'name'
@@ -136,7 +143,8 @@
                         name: '顾世豪',
                         age: 25,
                         address: '浙江省杭州市萧山区',
-                        date: '2018-01-04'
+                        date: '2018-01-04',
+                        _disabled: true
                     },
                     {
                         name: '顾世豪',
@@ -184,6 +192,12 @@
             },
             handleClearCurrentRow () {
                 this.$refs.mytable.clearCurrentRow();
+            },
+            test2 (a, b) {
+                console.log(a, b);
+            },
+            test3 (status) {
+                this.$refs.mytable.selectAll(status);
             }
         }
     }

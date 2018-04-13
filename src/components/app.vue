@@ -13,13 +13,43 @@
         color: white;
         line-height: 64px;
         background-color: #45528e;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .title > span {
+        font-size: 14px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .menu-area {
+        background-color: #2b2f47;
+        height: 100%;
+    }
+    
+    .menu {
+        background-color: #2b2f47;
+        font-size: 14px;
+        font-weight: bold;
+        color: #7b8299;
+    }
+
+    .my-header {
+        background-color: white;
     }
 </style>
 <template>
     <Layout class="area">
-        <Sider hide-trigger>
-            <div class="title">数聚客</div>
-            <Menu  active-name="1-2" theme="light" width="auto" :open-names="['1']">
+        <Sider class="menu-area" hide-trigger>
+            <div class="title">
+                <span>DATA</span>
+                <img src='../assets/icons/dcrm.png'></img>
+                <span>GEEK</span>
+            </div>
+            <Menu class="menu" active-name="1-2" theme="light" width="auto" :open-names="['1']">
                 <Submenu name="1">
                     <template slot="title">
                         <Icon type="ios-navigate"></Icon>
@@ -63,7 +93,7 @@
             </Menu>
         </Sider>
         <Layout>
-            <Header>Header</Header>
+            <Header class="my-header">Header</Header>
             <Content>Content</Content>
             <Footer>Footer</Footer>
         </Layout>
